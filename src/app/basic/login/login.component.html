@@ -1,0 +1,17 @@
+<!-- <div [formGroup]="loginGroup">
+<label for="userId" >User id</label>
+<input type="text" name="userId" id="userId" formControlName="userId">
+<label for="userpassword">Password</label>
+<input type="password" name="userPassword" id="userPassword" formControlName="userPassword">
+<button type="submit" (click)="login()">Login</button>
+</div> -->
+
+
+<div class="container full-height" [formGroup]="loginGroup">
+    <form class="form" action="">
+        <p class="title">Login Form</p>
+        <input placeholder="{{'login.userid' | translate}}" class="username input" type="text" name="userId" id="userId" formControlName="userId">
+        <input placeholder="Password" class="password input" type="password" name="userPassword" id="userPassword" formControlName="userPassword">
+        <button class="btn" type="submit"  (click)="login()">Login</button>
+    </form>
+</div>

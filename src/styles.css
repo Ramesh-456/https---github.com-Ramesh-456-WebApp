@@ -1,0 +1,58 @@
+@import 'style.scss';
+@import '/node_modules/primeflex/primeflex.css';
+
+:root{
+    --bgcolor:green;
+    --color:black;
+    --screenBgColor:#ecdaf6;
+    --chart-red:#ff0000;
+    --chart-green:#00ff00;
+    --chart-purple:#e254ff;
+    --chart-pink:#e25474;
+    --chart-yellow:#e2f874;
+    --chart-blue:#0000ff;
+}
+
+
+
+/*for chart colors*/
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* .container{
+    background:var(--bgcolor);
+    height: 100vh;
+} */
+*{
+    /* color: var(--color); */
+}
+/* .popoverStyle{
+    margin: 0;
+}
+[popover]:-internal-popover-in-top-layer::backdrop{
+    position: absolute;
+    margin: 0;
+} */
+/* .overflow-ellipsis{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+} */
+
+
+app-header:has(  #check:checked)   ~ .leftmenu-class #leftMenu{
+    width: 50px;
+    overflow: hidden;
+}
+.screen-bg-color {
+    /* background-color: var(--screenBgColor); */
+}
+.header-bg-gradient{
+    background: #654ea3;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #eaafc8, #654ea3);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #eaafc8, #654ea3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}

@@ -1,0 +1,77 @@
+
+<div [formGroup]="productCreate" class="flex gap-5 flex-wrap">
+<div class="flex flex-column gap-2">
+  <label for="username">Product name</label>
+  <input 
+      pInputText 
+      id="productName" 
+      aria-describedby="username-help" 
+      formControlName="productName" />
+
+</div>
+
+<div class="flex flex-column gap-2">
+  <label for="username">Product price</label>
+  <input 
+      pInputText 
+      id="productPrice" 
+      aria-describedby="username-help" 
+      formControlName="productPrice" />
+
+</div>
+
+<div class="flex flex-column gap-2">
+  <label for="username">Product type</label>
+  <input 
+      pInputText 
+      id="productType" 
+      aria-describedby="username-help" 
+      formControlName="productType" />
+
+</div>
+<p-fileUpload 
+    name="demo[]" 
+    (onUpload)="onUpload($event)" 
+
+    [multiple]="true" 
+    accept="image/*" 
+    maxFileSize="100000000000000">
+        <ng-template pTemplate="content">
+            <ul *ngIf="uploadedFiles.length">
+                <li *ngFor="let file of uploadedFiles">
+                    {{ file.name }} - {{ file.size }} bytes
+                </li>
+            </ul>
+        </ng-template>
+</p-fileUpload>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div [formGroup]="productCreate">
+    
+    <input type="file" (change)="addImage($event)" style="border: 1px solid black;"
+     formControlName="imageInput" multiple>
+    <!-- <input type="checkbox" name="" id="" formControlName="isDefault"> -->
+    <!-- <label for="">Default</label> -->
+    <button (click)="uploadImage()">Upload</button>
+      <div formArrayName="productImages" class="flex">
+        <div *ngFor="let imageGroup of imageArray.controls; let i = index" [formGroupName]="i">
+          <img [src]="imageGroup?.value?.productImage" height="100">
+          <!-- <input type="checkbox" formControlName="isDefaultImage"> Default -->
+          <button type="button" (click)="removeImage(i)">Remove</button>
+        </div>
+      </div>
+
+</div>
+    
+    <button type="submit" class="btn btn-primary" (click)="submit()"> Submit </button>
+   <button type="reset" class="btn btn-secondary" (click)="reset()" > Reset</button>
+    
